@@ -1,0 +1,109 @@
+body{
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+}
+.header_section {
+    width: 100%;
+    float: left;
+    background-color: #040a47;
+    height: auto;
+    background-size: 100%;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+.toggle_icon {
+    padding: 10px 0px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.sidenav a {
+    padding: 4px 8px 4px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #fc967e;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav {
+    z-index: 99999999999999;
+    background-color: rgb(0, 0, 0, 0.9);
+}
+
+
+.login_text {
+    width: 100%;
+    float: left;
+}
+
+.login_text ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.login_text li {
+    font-size: 18px;
+    color: #221a1a;
+    text-transform: uppercase;
+    float: left;
+    padding-left: 15px;
+}
+
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, .9);
+    padding-left: 90px;
+    z-index: 2;
+}
+
+.mainbox{
+    margin-top: 200px !important;
+    background-color: #ff936e;
+    padding: 20px !important;
+}
+
+.mainbox h1{
+    background-color: #ff936e;
+    padding: 5px;
+}
+
+input,label{
+    margin: 7px;
+    font-size: 15px;
+}
+
+#quizdiv li{
+list-style: none;
+}
+
+#quizdiv button{
+    margin-top: 10px;
+    padding: 5px 20px;
+}
