@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harry Potter Books Quiz</title>
+</head>
+<body>
+    <h1>Harry Potter Books Quiz</h1>
+    <div id="question"></div>
+    <div id="choices"></div>
+    <button id="submit">Submit</button>
+
+    <script>
+        var questions = [
+            {
+                question: "Who is the author of the Harry Potter book series?",
+                choices: ["J.K. Rowling", "Stephenie Meyer", "Suzanne Collins"],
+                answer: "J.K. Rowling"
+            },
+            {
+                question: "What is the title of the first book in the series?",
+                choices: ["Harry Potter and the Goblet of Fire", "Harry Potter and the Philosopher's Stone", "Harry Potter and the Order of the Phoenix"],
+                answer: "Harry Potter and the Philosopher's Stone"
+            },
+            {
+                question: "What house does Harry Potter belong to?",
+                choices: ["Gryffindor", "Ravenclaw", "Hufflepuff"],
+                answer: "Gryffindor"
+            }
+        ];
+
+        var currentQuestion = 0;
+        var score = 0;
+
+        function displayQuestion() {
+            var questionElement = document.getElementById("question");
+            var choicesElement = document.getElementById("choices");
+            var currentQuestionObj = questions[currentQuestion];
+
+            questionElement.textContent = currentQuestionObj.question;
+            choicesElement.innerHTML = "";
+
+            for (var i = 0; i < currentQuestionObj.choices.length; i++) {
+                var choice = currentQuestionObj.choices[i];
+                var button = document.createElement("button");
+                button.textContent = choice;
+                button.addEventListener("click", checkAnswer);
+                choicesElement.appendChild(button);
+            }
+        }
+
+        function checkAnswer(event) {
+            var selectedChoice = event.target.textContent;
+            var currentQuestionObj = questions[currentQuestion];
+
+            if (selectedChoice === currentQuestionObj.answer) {
+                score++;
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion === questions.length) {
+                // Display the final score
+                document.getElementById("question").textContent = "Quiz Completed!";
+                document.getElementById("choices").textContent = "Your score is " + score + " out of " + questions.length;
+                document.getElementById("submit").style.display = "none";
+            } else {
+                displayQuestion();
+            }
+        }
+
+        document.getElementById("submit").addEventListener("click", checkAnswer);
+
+        displayQuestion();
+    </script>
+</body>
+</html>
