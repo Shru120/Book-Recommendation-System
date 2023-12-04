@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Dorang landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Recommend</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/themify-icons/css/themify-icons.css') }}">
+
+    <!-- Bootstrap + Dorang main styles -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    
+    <!-- page navbar -->
+    <nav class="page-navbar" data-spy="affix" data-offset-top="10">
+        <ul class="nav-navbar container">
+            <li class="nav-item"><a href="/">Home</a></li>
+            <li class="nav-item"><a href="/recommend">Recommend</a></li>
+           
+            <div class="search-wrapper">
+               
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<header class="header">
+    <div class="overlay"></div>
+    <div class="header-content">
+        <h1 class="header-title">The world belongs to those who read!</h1>
+        <p class="header-subtitle">When it comes to a selecting a great book, we don't discriminate!</p>
+            <form action="/recommend_books" method="POST">
+                    <input name="user_input" type="text" class="form-control"><br>
+                    <input type="submit" class="btn btn-lg btn-warning">
+                </form>
+            </header>
+                <div class="row">
+            {% if data %}
+
+             {% for i in data %}
+                <div class="col-md-2 style="margin-left:90px">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{i[2]}}">
+                            <p class="text-white">{{i[0]}}</p>
+                            <h4 class="text-white">{{i[1]}}</h4>
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+
+            {% endif %}
+
+        </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>
